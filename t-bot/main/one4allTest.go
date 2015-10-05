@@ -6,7 +6,7 @@ import (
 )
 
 func TestGetMe() {
-  token := "138973547:AAE0mVpkk0Bu982ez-_GgEowyWtLC_JGC9U"
+  token := 
 	bot := one4all.New(token)
 	me := one4all.getMe(bot)
 	fmt.Println(me.Id)
