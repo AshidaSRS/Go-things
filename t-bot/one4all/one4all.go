@@ -2,10 +2,6 @@
 package one4all
 
 import(
-"encoding/json"
-	"errors"
-	"io"
-	"strings"
   "fmt"
   "github.com/AshidaSRS/Go-things/t-bot/types"
 )
@@ -16,7 +12,7 @@ const(
 )
 //Struct to manage interactions functions
 type TelegramBot struct {
-  	Token                string
+  Token                string
 	BaseRequestURL       string
 	BaseFileRequestURL   string
  	Messages    	     chan (*types.Message)
@@ -30,14 +26,11 @@ func New(token string) *TelegramBot {
 	Token:                token,
 	BaseRequestURL:       aurl,
 	BaseFileRequestURL:   furl,
-    Messages:             make(chan *types.Message),
+  Messages:             make(chan *types.Message),
   }
 	return tgbot
 }
 
-// GetMe function :D
-func (bot TgBot) GetMe() (types.User, error) {
-}
 
 
 
