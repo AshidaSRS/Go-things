@@ -6,9 +6,9 @@ import (
 )
 
 func TestGetMe() {
-  token := 
+  token :=
 	bot := one4all.New(token)
-	me := one4all.getMe(bot)
+	me, _ := bot.GetMe()
 	fmt.Println(me.Id)
   fmt.Println(me.Username)
 }

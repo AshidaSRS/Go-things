@@ -3,7 +3,7 @@ package one4all
 
 import(
   "fmt"
-  "github.com/AshidaSRS/Go-things/t-bot/types"
+  "github.com/AshidaSRS/Go-Things/t-bot/types"
 )
 //Telegram constants
 const(
@@ -15,7 +15,7 @@ type TelegramBot struct {
   Token                string
 	BaseRequestURL       string
 	BaseFileRequestURL   string
- 	Messages    	     chan (*types.Message)
+ 	Messages    	       chan (*types.Message)
 }
 //New bot
 func New(token string) *TelegramBot {
@@ -23,10 +23,10 @@ func New(token string) *TelegramBot {
 	furl := fmt.Sprintf(FileUrl, token, "%s")
 
 	tgbot := &TelegramBot{
-	Token:                token,
-	BaseRequestURL:       aurl,
-	BaseFileRequestURL:   furl,
-  Messages:             make(chan *types.Message),
+    Token:                token,
+    BaseRequestURL:       aurl,
+    BaseFileRequestURL:   furl,
+    Messages:             make(chan *types.Message),
   }
 	return tgbot
 }

@@ -1,6 +1,11 @@
 package types
 
-
+// ResultBase ...
+type ResultBase struct {
+	Ok          bool    `json:"ok"`
+	ErrorCode   *int    `json:"error_code,omitempty"`
+	Description *string `json:"description,omitempty"`
+}
 // Update object.
 type Update struct {
 	UpdateId   float64 `json:"update_id"`
@@ -13,6 +18,12 @@ type User struct {
 	FirstName  string `json:"first_name"`
 	LastName   string `json:"last_name"`
 	Username   string `json:"username"`
+}
+
+// ResultGetUser ...
+type ResultGetUser struct {
+	ResultBase
+	Result User `json:"result,omitempty"`
 }
 
 // GroupChat object.
