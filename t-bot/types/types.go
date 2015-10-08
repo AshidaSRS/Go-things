@@ -1,7 +1,7 @@
 package types
 
-// ResultBase ...
-type ResultBase struct {
+
+type RBase struct {
 	Ok          bool    `json:"ok"`
 	ErrorCode   *int    `json:"error_code,omitempty"`
 	Description *string `json:"description,omitempty"`
@@ -12,6 +12,11 @@ type Update struct {
 	Message    *Message `json:"message"`
 }
 
+type RGetUpdates struct {
+	RBase
+	Result []Update `json:"result"`
+}
+
 // User object.
 type User struct {
 	Id         float64 `json:"id"`
@@ -20,9 +25,9 @@ type User struct {
 	Username   string `json:"username"`
 }
 
-// ResultGetUser ...
-type ResultGetUser struct {
-	ResultBase
+
+type RGetUser struct {
+	RBase
 	Result User `json:"result,omitempty"`
 }
 
@@ -43,8 +48,8 @@ type Chat struct {
 
 // Message object.
 type Message struct {
-	Message_Id          int64 `josn:"message_id"`
-	From                *User `json:"from"`
+	Message_Id          int64 `json:"message_id"`
+	From                *User `json: "from"`
 	Date                float64 `json:"date"`
 	Chat                *Chat `json:"chat"`
 	ForwardFrom         *User `json:"forward_from,omitempty"`
